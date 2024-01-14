@@ -1,0 +1,6 @@
+.oddyMainContent {
+  display: flex;
+  justify-content: flex-start;
+  gap: 55px;
+  padding: 10px 20px;
+}

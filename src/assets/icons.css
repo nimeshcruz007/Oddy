@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "oddy";
+  src: url("fonts/oddy.eot?p9tm5c");
+  src: url("fonts/oddy.eot?p9tm5c#iefix") format("embedded-opentype"),
+    url("fonts/oddy.ttf?p9tm5c") format("truetype"),
+    url("fonts/oddy.woff?p9tm5c") format("woff"),
+    url("fonts/oddy.svg?p9tm5c#oddy") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "oddy" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-logout:before {
+  content: "\e900";
+}
+.icon-help:before {
+  content: "\e901";
+}
+.icon-settings:before {
+  content: "\e902";
+}
+.icon-messges:before {
+  content: "\e903";
+}
+.icon-users:before {
+  content: "\e904";
+}
+.icon-burger:before {
+  content: "\e905";
+}
+.icon-invoice:before {
+  content: "\e906";
+}
+.icon-home:before {
+  content: "\e907";
+}

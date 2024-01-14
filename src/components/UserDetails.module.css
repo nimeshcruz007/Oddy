@@ -1,0 +1,17 @@
+.userDetails {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.favicon {
+  background: url("../assets/images/james.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50px;
+  width: 50px;
+  aspect-ratio: 1;
+}

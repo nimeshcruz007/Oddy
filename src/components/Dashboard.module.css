@@ -1,0 +1,9 @@
+.oddyDashboard {
+  margin-top: 50px;
+  align-self: flex-start;
+  background: white;
+  border-radius: 10px;
+  padding: 30px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
