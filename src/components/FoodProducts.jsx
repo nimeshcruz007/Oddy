@@ -1,73 +1,38 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+import { useEffect, useState } from "react";
+import { Swiper } from "swiper/react";
+
 import FoodItem from "./FoodItem";
 
-const products = [
-  {
-    tag: "Chicken",
-    img: "/images/food1.png",
-    title: "Almond Brown Sugar Cossiant",
-    price: 120,
-    pieces: 3,
-  },
-  {
-    tag: "Chicken",
-    img: "/images/food2.png",
-    title: "Almond Brown Sugar Cossiant",
-    price: 120,
-    pieces: 3,
-  },
-  {
-    tag: "Chicken",
-    img: "/images/food2.png",
-    title: "Almond Brown Sugar Cossiant",
-    price: 120,
-    pieces: 3,
-  },
-  {
-    tag: "Chicken",
-    img: "/images/food3.png",
-    title: "Almond Brown Sugar Cossiant",
-    price: 120,
-    pieces: 3,
-  },
-  {
-    tag: "Drinks",
-    img: "/images/food3.png",
-    title: "Almond Brown Sugar Cossiant",
-    price: 120,
-    pieces: 3,
-  },
-  {
-    tag: "Drinks",
-    img: "/images/food3.png",
-    title: "Almond Brown Sugar Cossiant",
-    price: 120,
-    pieces: 3,
-  },
-  {
-    tag: "Drinks",
-    img: "/images/food3.png",
-    title: "Almond Brown Sugar Cossiant",
-    price: 120,
-    pieces: 3,
-  },
-  {
-    tag: "Drinks",
-    img: "/images/food3.png",
-    title: "Almond Brown Sugar Cossiant",
-    price: 120,
-    pieces: 3,
-  },
-];
+import "swiper/css";
+
+const BASE_URL = "http://localhost:8000";
 function FoodProducts() {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [foods, setFoods] = useState([]);
+
+  useEffect(function () {
+    async function fetchData() {
+      setLoading(true);
+      try {
+        const res = await fetch(`${BASE_URL}/food`);
+        const data = await res.json();
+        setFoods(data);
+      } catch {
+        setError("Something wrong with the server");
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchData();
+  }, []);
+
   return (
     <div>
-      <Swiper>
-        {products.map((item, key) => (
-          <SwiperSlide key={key}>
-            <FoodItem data={item} />
-          </SwiperSlide>
-        ))}
+      <Swiper spaceBetween={30} slidesPerView={3}>
+        {foods.map((item, key) => {
+          return <FoodItem item={item} key={key} />;
+        })}
       </Swiper>
     </div>
   );

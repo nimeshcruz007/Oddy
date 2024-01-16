@@ -133,7 +133,6 @@ input {
 /* ### Order section ### */
 .order-sec {
   padding: 50px 30px;
-  background-color: red;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -163,12 +162,12 @@ input {
   margin-bottom: 20px;
 }
 .product-card__cont h3 {
-  font-weight: medium;
-  font-size: 20px;
+  font-weight: 500;
+  font-size: 16px;
 }
-.product-card__price span:first-child {
-  font-weight: bold;
-  font-size: 25px;
+.product-card__price {
+  font-weight: 600;
+  font-size: 20px;
 }
 
 /* ### Order Cart ### */
