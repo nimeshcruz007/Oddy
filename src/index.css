@@ -152,10 +152,16 @@ input {
   font-size: 14px;
 }
 /* ### Order Page header ### */
+.food-product__wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
 .product-card {
   background: var(--primary-clr);
   padding: 20px;
   border-radius: 10px;
+  position: relative;
 }
 .product-card__img {
   border-radius: 10px;
@@ -168,6 +174,18 @@ input {
 .product-card__price {
   font-weight: 600;
   font-size: 20px;
+}
+.product-card__tag {
+  background: red;
+  border-radius: 10px;
+  padding: 5px 20px;
+  color: white;
+  display: block;
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /* ### Order Cart ### */

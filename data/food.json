@@ -2,6 +2,7 @@
   "food": [
     {
       "id": "123456",
+      "tag": "chicken",
       "img": "/images/food1.png",
       "title": "Almond Brown Sugar Cossiant",
       "price": 120,
@@ -9,6 +10,7 @@
     },
     {
       "id": "123457",
+      "tag": "Chicken",
       "img": "/images/food2.png",
       "title": "Almond Brown Sugar Cossiant",
       "price": 120,
@@ -16,6 +18,7 @@
     },
     {
       "id": "123458",
+      "tag": "Chicken",
       "img": "/images/food2.png",
       "title": "Almond Brown Sugar Cossiant",
       "price": 120,
@@ -23,6 +26,7 @@
     },
     {
       "id": "123459",
+      "tag": "Chicken",
       "img": "/images/food3.png",
       "title": "Almond Brown Sugar Cossiant",
       "price": 120,
@@ -30,6 +34,7 @@
     },
     {
       "id": "123460",
+      "tag": "Juice",
       "img": "/images/food3.png",
       "title": "Almond Brown Sugar Cossiant",
       "price": 120,
@@ -37,6 +42,7 @@
     },
     {
       "id": "123461",
+      "tag": "Juice",
       "img": "/images/food3.png",
       "title": "Almond Brown Sugar Cossiant",
       "price": 120,
@@ -44,6 +50,7 @@
     },
     {
       "id": "123462",
+      "tag": "Juice",
       "img": "/images/food3.png",
       "title": "Almond Brown Sugar Cossiant",
       "price": 120,
@@ -51,6 +58,7 @@
     },
     {
       "id": "123463",
+      "tag": "Tea",
       "img": "/images/food3.png",
       "title": "Almond Brown Sugar Cossiant",
       "price": 120,
