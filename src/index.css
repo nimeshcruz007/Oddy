@@ -132,10 +132,12 @@ input {
 
 /* ### Order section ### */
 .order-sec {
+  height: 100vh;
   padding: 50px 30px;
   display: flex;
   flex-direction: column;
   gap: 30px;
+  overflow-y: scroll;
 }
 
 /* ### Order Page header ### */

@@ -1,8 +1,14 @@
-import { SwiperSlide } from "swiper/react";
+import { useFoodData } from "../context/FoodContext";
 
 function FoodItem({ item }) {
+  const { handleOrder } = useFoodData();
   return (
-    <div className="product-card">
+    <div
+      className="product-card"
+      onClick={() => {
+        handleOrder(item.id);
+      }}
+    >
       <span className="product-card__tag">{item.tag}</span>
       <img src={item.img} alt="fod1" className="product-card__img" />
       <div className="product-card__cont">

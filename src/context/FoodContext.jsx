@@ -4,6 +4,7 @@ const initialState = {
   loading: false,
   error: "",
   foods: [],
+  selectedItem: 0,
 };
 
 const BASE_URL = "http://localhost:8000";
@@ -18,14 +19,24 @@ function reducer(state, action) {
       return { ...state, error: action.payload };
     case "food/loaded":
       return { ...state, loading: false, foods: action.payload };
+    case "food/order":
+      return {
+        ...state,
+        loading: false,
+        selectedItem: action.payload,
+      };
   }
 }
 
 function FoodProvider({ children }) {
-  const [{ loading, error, foods }, dispatch] = useReducer(
+  const [{ loading, error, foods, orders }, dispatch] = useReducer(
     reducer,
     initialState,
   );
+
+  function handleOrder(id) {
+    dispatch({ type: "food/order", payload: id });
+  }
 
   useEffect(function () {
     async function fetchData() {
@@ -42,7 +53,9 @@ function FoodProvider({ children }) {
   }, []);
 
   return (
-    <FoodContext.Provider value={{ loading, error, foods }}>
+    <FoodContext.Provider
+      value={{ loading, error, foods, orders, handleOrder, dispatch }}
+    >
       {children}
     </FoodContext.Provider>
   );
