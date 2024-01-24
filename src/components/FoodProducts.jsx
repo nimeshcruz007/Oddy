@@ -8,7 +8,7 @@ function FoodProducts() {
     <div className="food-product">
       <div className="food-product__wrapper">
         {foods.map((item, key) => {
-          return <FoodItem item={item} key={key} />;
+          return <FoodItem item={item} styleClass={"foodList"} key={key} />;
         })}
       </div>
     </div>

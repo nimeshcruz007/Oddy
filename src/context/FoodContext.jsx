@@ -4,7 +4,7 @@ const initialState = {
   loading: false,
   error: "",
   foods: [],
-  selectedItem: 0,
+  order: [],
 };
 
 const BASE_URL = "http://localhost:8000";
@@ -23,13 +23,16 @@ function reducer(state, action) {
       return {
         ...state,
         loading: false,
-        selectedItem: action.payload,
+        order: [
+          ...state.order,
+          state.foods.find((item) => item.id === action.payload),
+        ],
       };
   }
 }
 
 function FoodProvider({ children }) {
-  const [{ loading, error, foods, orders }, dispatch] = useReducer(
+  const [{ loading, error, foods, order }, dispatch] = useReducer(
     reducer,
     initialState,
   );
@@ -53,9 +56,7 @@ function FoodProvider({ children }) {
   }, []);
 
   return (
-    <FoodContext.Provider
-      value={{ loading, error, foods, orders, handleOrder, dispatch }}
-    >
+    <FoodContext.Provider value={{ loading, error, foods, order, handleOrder }}>
       {children}
     </FoodContext.Provider>
   );
