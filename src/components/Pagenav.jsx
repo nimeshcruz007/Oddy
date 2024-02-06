@@ -2,45 +2,44 @@ import { Link } from "react-router-dom";
 
 function Pagenav() {
   return (
-    <nav className="order-page__nav">
-      <div>
-        <span className="order-page__nav-logo"></span>
+    <nav className="order-page__nav ">
+      <span className="order-page__nav-logo">Logo</span>
+      <div className="order-page__nav-wraper">
         <ul>
-          <li>
+          <li className="nav-item">
             <Link to="/">
-              <i className="icon-invoice"></i>
+              <i className="oddy-home"></i>
             </Link>
           </li>
-          <li>
+          <li className="nav-item">
             <Link to="/invoice">
-              <i className="icon-invoice"></i>
+              <i className="oddy-invoice"></i>
             </Link>
           </li>
-          <li>
+          <li className="nav-item">
             <Link to="/clients">
-              <i className="icon-invoice"></i>
+              <i className="oddy-users"></i>
             </Link>
           </li>
-          <li>
+          <li className="nav-item">
             <Link to="/cart">
-              <i className="icon-invoice"></i>
+              <i className="oddy-burger"></i>
+            </Link>
+          </li>
+        </ul>
+        <ul>
+          <li className="nav-item">
+            <Link to="/settings">
+              <i className="oddy-settings"></i>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/logout">
+              <i className="oddy-exit"></i>
             </Link>
           </li>
         </ul>
       </div>
-
-      <ul>
-        <li>
-          <Link to="/settings">
-            <i className="icon-invoice"></i>
-          </Link>
-        </li>
-        <li>
-          <Link to="/logout">
-            <i className="icon-invoice"></i>
-          </Link>
-        </li>
-      </ul>
     </nav>
   );
 }

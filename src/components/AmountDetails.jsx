@@ -1,21 +1,14 @@
 import { useFoodData } from "../context/FoodContext";
 
-function AmountDetails() {
+function AmountDetails({ price, totalAmt, taxAmt }) {
   const { order } = useFoodData();
-
-  const totalPrice = order.reduce(
-    (accumulator, currentValue) => accumulator + currentValue.price,
-    0
-  );
-  const taxAmt = (totalPrice * 18) / 100;
-  const totalAmt = totalPrice + taxAmt;
 
   return (
     order.length != 0 && (
       <div className="total-amount" style={{ alignSelf: "flex-end" }}>
         <p>
-          <span>Total : </span>
-          <span>₹{totalPrice}.0</span>
+          <span>Price : </span>
+          <span>₹{price}.0</span>
         </p>
         <p>
           <span>Tax(18%) : </span>

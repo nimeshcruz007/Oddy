@@ -7,6 +7,17 @@
   --body-bg: #ebf4fc;
   --reb-blue: rebeccablue;
   --txt-clr: #828282;
+
+  --f-size-14: 14px;
+  --f-size-15: 15px;
+  --f-size-16: 16px;
+  --f-size-20: 20px;
+  --f-size-24: 24px;
+  --f-size-25: 25px;
+
+  --f-regular: 400;
+  --f-medium: 500;
+  --f-semibold: 500;
 }
 
 *,
@@ -34,6 +45,11 @@ p {
   overflow-wrap: break-word;
 }
 
+h1 {
+  font-size: var(--f-size-25);
+  font-weight: var(--f-regular);
+}
+
 ul,
 ol[role="list"] {
   list-style: none;
@@ -50,6 +66,10 @@ picture {
 
 a {
   text-decoration: none;
+  color: black;
+}
+a:active {
+  color: var(--txt-clr);
 }
 
 input {
@@ -60,7 +80,6 @@ button {
   border: 0px;
   outline: none;
 }
-
 #root {
   background-color: var(--body-bg);
   max-width: 100%;
@@ -111,8 +130,6 @@ button {
   font-weight: 600;
   color: var(--txt-clr);
 }
-.dashboard__nav-item:nth-child(8) {
-}
 
 /* #### Order page ### */
 /* ### Order page Navbar ### */
@@ -123,15 +140,26 @@ button {
   grid-template-columns: 5% 70% 25%;
 }
 .order-page__nav {
-  min-width: 100%;
   min-height: 100%;
-  background-color: white;
+  background-color: var(--primary-clr);
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 50px;
+  gap: 30px;
+}
+.order-page__nav-wraper {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding: 50px 20px;
-  font-size: 20px;
+}
+.order-page__nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--f-size-20);
 }
 
 /* ### Order section ### */
@@ -142,6 +170,16 @@ button {
   flex-direction: column;
   gap: 30px;
   overflow-y: scroll;
+  position: relative;
+}
+.order-sec .warning {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: yellow;
+  padding: 10px 20px;
+  border-radius: 10px;
 }
 
 /* ### Order Page header ### */
@@ -210,18 +248,55 @@ button {
     color: var(--primary-clr);
     padding: 15px;
     border-radius: 10px;
+    cursor: pointer;
+  }
+
+  & .total-amount p {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  & .total-amount {
+    font-size: 14px;
+    background: var(--body-bg);
+    border-radius: 10px;
+    padding: 20px;
+
+    &.total-amount p:last-child {
+      font-size: 16px;
+      margin-top: 20px;
+    }
   }
 }
+
 .order-cart__orders {
   max-height: 250px;
   overflow-y: scroll;
 }
+
+/* ### Order Card ### */
+
 .order-card {
   display: flex;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 10px;
   position: relative;
+
+  & .order-card__remove {
+    font-size: 8px;
+    font-weight: 400;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 3px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
 
   & .order-card__img {
     width: 50px;
@@ -248,40 +323,31 @@ button {
     padding-inline: 5px;
     color: var(--primary-clr);
   }
-}
-.order-card .order-card__price {
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 
-  & .item-count {
+  & .order-card__price {
+    font-weight: 500;
     display: flex;
-    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
 
-    & button {
-      font-size: 16px;
-      outline: none;
-      border: none;
-      padding: 2.5px 5px;
-      border-radius: 10px;
-      background-color: black;
-      color: var(--primary-clr);
+    & .item-count {
+      display: flex;
+      gap: 10px;
+
+      & button {
+        font-size: 16px;
+        width: 25px;
+        aspect-ratio: 1;
+        outline: none;
+        border: none;
+        border-radius: 100vw;
+        background-color: var(--txt-clr);
+        color: var(--primary-clr);
+        cursor: pointer;
+      }
     }
   }
 }
-.order-cart .total-amount {
-  background: var(--body-bg);
-  border-radius: 10px;
-  padding: 20px;
-
-  &.total-amount p {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
-
-  &.total-amount p:last-child {
-    margin-top: 20px;
-  }
+.order-card:hover .order-card__remove {
+  opacity: 1;
 }
