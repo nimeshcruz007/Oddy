@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Search from "./Search";
+import Search from "../dashboard/Search";
 function ItemList() {
   const [queryItem, setQueryItem] = useState("search");
   return (

@@ -70,7 +70,7 @@ function reducer(state, action) {
       return {
         ...state,
         order: [],
-        message: [{ type: "success", content: "order placed" }],
+        message: [{ type: "success", content: "Order placed successfully" }],
       };
     }
   }

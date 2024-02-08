@@ -1,5 +1,5 @@
-import Header from "../components/Header";
-import MainContent from "../components/MainContent";
+import Header from "../components/dashboard/Header";
+import MainContent from "../components/dashboard/MainContent";
 
 function Homepage() {
   return (

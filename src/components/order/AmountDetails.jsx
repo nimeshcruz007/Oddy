@@ -1,4 +1,4 @@
-import { useFoodData } from "../context/FoodContext";
+import { useFoodData } from "../../context/FoodContext";
 
 function AmountDetails({ price, totalAmt, taxAmt }) {
   const { order } = useFoodData();

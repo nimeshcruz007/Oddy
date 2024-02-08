@@ -1,5 +1,5 @@
 import FoodItem from "./FoodItem";
-import { useFoodData } from "../context/FoodContext";
+import { useFoodData } from "../../context/FoodContext";
 
 function FoodProducts() {
   const { foods } = useFoodData();

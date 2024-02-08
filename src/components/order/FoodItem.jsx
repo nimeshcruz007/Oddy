@@ -1,4 +1,4 @@
-import { useFoodData } from "../context/FoodContext";
+import { useFoodData } from "../../context/FoodContext";
 
 function FoodItem({ item, styleClass }) {
   const { handleOrder } = useFoodData();

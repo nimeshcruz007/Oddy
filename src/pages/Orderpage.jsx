@@ -1,6 +1,6 @@
-import PageNav from "../components/Pagenav";
-import OrderSection from "../components/OrderSection";
-import OrderCart from "../components/OrderCart";
+import PageNav from "../components/order/Pagenav";
+import OrderSection from "../components/order/OrderSection";
+import OrderCart from "../components/order/OrderCart";
 
 import { FoodProvider } from "../context/FoodContext";
 

@@ -5,35 +5,35 @@ function Navbar() {
   const navItemArray = [
     {
       name: "Home",
-      icon: "icon-home",
+      icon: "oddy-home",
     },
     {
-      name: "Inoices",
-      icon: "icon-invoice",
+      name: "Invoices",
+      icon: "oddy-invoice",
     },
     {
       name: "Products",
-      icon: "icon-burger",
+      icon: "oddy-burger",
     },
     {
       name: "Clients",
-      icon: "icon-users",
+      icon: "oddy-users",
     },
     {
       name: "Messages",
-      icon: "icon-messges",
+      icon: "oddy-messges",
     },
     {
       name: "Settings",
-      icon: "icon-settings",
+      icon: "oddy-settings",
     },
     {
       name: "Help",
-      icon: "icon-help",
+      icon: "oddy-help",
     },
     {
       name: "Logout",
-      icon: "icon-logout",
+      icon: "oddy-exit",
     },
   ];
   return (
